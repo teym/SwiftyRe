@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 public class Re {
 	
 	static private var cache = [String: NSRegularExpression]()
@@ -173,9 +171,9 @@ public class Re {
 	
 }
 
-extension Re {
+public extension Re {
 	
-	public static func trim(_ string:String, pattern:String? = nil) -> String {
+	public class func trim(_ string:String, pattern:String? = nil) -> String {
 		if let pattern = pattern {
 			return Re("(" + pattern + ")+$").replace(Re("^(" + pattern + ")+").replace(string, ""), "")
 		}
@@ -183,13 +181,13 @@ extension Re {
 		
 	}
 	
-	public static func split(_ str: String, separator: String) -> [String]{
+	public class func split(_ str: String, separator: String) -> [String]{
 		
 		return str.components(separatedBy: separator).filter({ $0.characters.count > 0 })
 		
 	}
 	
-	public static func slice(_ str:String, start: Int, end: Int? = nil) -> String{
+	public class func slice(_ str:String, start: Int, end: Int? = nil) -> String{
 		let len = str.characters.count
 		var start = start
 		var end   = end == nil ? len : end!

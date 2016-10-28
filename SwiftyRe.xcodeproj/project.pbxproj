@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77C5CE361DC35FB4005EFD47 /* SwiftyRe.h in Headers */ = {isa = PBXBuildFile; fileRef = 77C5CE341DC35FB4005EFD47 /* SwiftyRe.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		778ACD7E1DC375FD00F21CB0 /* SwiftyRe.h in Headers */ = {isa = PBXBuildFile; fileRef = 77C5CE341DC35FB4005EFD47 /* SwiftyRe.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77FBB9D21DC3625600A7FC4B /* Re.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FBB9D11DC3625600A7FC4B /* Re.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +62,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77C5CE361DC35FB4005EFD47 /* SwiftyRe.h in Headers */,
+				778ACD7E1DC375FD00F21CB0 /* SwiftyRe.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
