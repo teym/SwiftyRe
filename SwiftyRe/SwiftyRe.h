@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Wang Liang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for SwiftyRe.
 FOUNDATION_EXPORT double SwiftyReVersionNumber;

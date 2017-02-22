@@ -12,9 +12,9 @@ Re("[,.:] +").explode(str)
 
 Re("https?:\\/\\/").test(str)
 
-Re("\\W").match(str)?.values
+Re("\\W").match(str)
 
-Re("\\W", "g").match(str)?.values
+Re("\\W", "g").match(str)
 
 Re("\\W", "g").replace(str, " ")
 
@@ -26,8 +26,10 @@ while let m = re.exec(str) {
 
 // static method
 
-Re.split(str, separator:" ")
-
 Re.trim(str, pattern:"\\w+")
 
 Re.slice(str, start: 23)
+
+Re.lexer(code: "a (b, c) d", separator: " ")
+
+
