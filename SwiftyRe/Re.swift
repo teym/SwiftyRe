@@ -89,6 +89,24 @@ public class Re {
 		let len = input.characters.count
 		return self.regex.stringByReplacingMatches(in : input, range : NSMakeRange(offset, len - offset), withTemplate : template)
 	}
+    
+    public func replace(_ input:String, offset: Int = 0, _ template:@escaping (Re.Result) -> String ) -> String {
+        var list = [String]()
+        var offset = offset
+        
+        if offset > 0 {
+            list.append( Re.slice(input, start: 0, end: offset) )
+        }
+        while let m = self.match(input, offset: offset, nonGlobal: true) {
+            list.append( Re.slice(input, start: offset, end: m.index) )
+            list.append( template(m) )
+            offset = m.lastIndex+1
+        }
+        if offset < input.characters.count {
+            list.append( Re.slice(input, start: offset) )
+        }
+        return list.joined()
+    }
 	
 	public func match(_ input:String, offset:Int = 0, nonGlobal:Bool = false) -> Result?{
 		let len = input.characters.count
@@ -277,7 +295,7 @@ public extension Re {
         return res.filter({ $0.characters.count > 0 })
     }
     
-    public static func slice(_ str:String, start: Int, end: Int? = nil, trim:CharacterSet? = nil) -> String{
+    public static func slice(_ str:String, start: Int, end: Int? = nil, trim:CharacterSet? = nil) -> String {
         let len = str.characters.count
         var start = start
         var end   = end == nil ? len : end!

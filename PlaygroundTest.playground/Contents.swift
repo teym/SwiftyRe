@@ -18,6 +18,9 @@ Re("\\W", "g").match(str)
 
 Re("\\W", "g").replace(str, " ")
 
+let ref = Re("-(\\w)").replace("padding-top:0; maring-right:0;", {m in return m[1]!.uppercased()})
+ref
+
 let re = Re("\\W")
 
 while let m = re.exec(str) {
