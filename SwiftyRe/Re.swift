@@ -136,7 +136,7 @@ public class Re {
 				var res = [String]()
                 var last = -1
 				for i in 0 ..< match.numberOfRanges {
-					let r = match.rangeAt(i)
+					let r = match.range(at: i)
                     if r.length > 0 && r.location + r.length - 1 > last {
                         last = r.location + r.length - 1
                     }
@@ -317,7 +317,7 @@ public extension Re {
         if trim != nil {
             return ref.trimmingCharacters(in: trim!)
         }
-        return ref
+        return String(ref)
     }
     
 }
