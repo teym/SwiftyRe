@@ -226,7 +226,7 @@ public class Re {
     
     public final func exec(_ input:String) -> Result? {
         if let res = self.match(input, offset: self.lastIndex, nonGlobal: true) {
-            self.lastIndex = res.lastIndex
+            self.lastIndex = res.index + res.values[0].characters.count
             return res
         }
         self.lastIndex = 0
